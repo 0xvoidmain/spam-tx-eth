@@ -57,7 +57,7 @@ async function sleep30() {
 async function sleep5() { 
     return new Promise(resolve => { 
         var id = setInterval(() => {
-            if (Math.floor(Date.now() / 1000) % 10 == 0) {
+            if (Math.floor(Date.now() / 1000) % 5 == 0) {
                 clearInterval(id)
                 resolve()
             }
