@@ -21,7 +21,7 @@ const sendAmountForTest = '0.000000001' //eth
 const sleepTime = 5000; //minisecond
 const chainId = 1995;
 const MAX_LEVEL = 9; //2^n
-const MAX_WALLET = 500; //Max-wallet < 2^n
+const MAX_WALLET = 500; //Max-wallet < 2^n. Max wallet per cluster => total wallet = maxwallet * number of CPUs
 
 // const MAX_LEVEL = 2;
 // const MAX_WALLET = 3;
