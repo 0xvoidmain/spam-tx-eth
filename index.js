@@ -10,17 +10,18 @@ const rpc = 'https://rpc-l2.hamsterbox.xyz'
 
 const provider = new ethers.providers.JsonRpcProvider(rpc);
 const web3 = new Web3(rpc);
+
 // 0xac6f56D5bF6Ac760A2e2Ce99204b23b7D85d1a08
 const owner = web3.eth.accounts.privateKeyToAccount(process.argv[2] || '0x433b95ad6a5a3f784693ed2724e6cd76747d48f40829c175adcc724d14dc5208')
 console.log('Root wallet:', owner.address)
 
-const gasPrice = '1.5'
-const sendAmount = '0.0001'
-const sendAmountForTest = '0.000000001'
-const sleepTime = 5000;
+const gasPrice = '1.5' //gwei
+const sendAmount = '0.0001' //eth
+const sendAmountForTest = '0.000000001' //eth
+const sleepTime = 5000; //minisecond
 const chainId = 1995;
-const MAX_LEVEL = 9;
-const MAX_WALLET = 500;
+const MAX_LEVEL = 9; //2^n
+const MAX_WALLET = 500; //Max-wallet < 2^n
 
 // const MAX_LEVEL = 2;
 // const MAX_WALLET = 3;
