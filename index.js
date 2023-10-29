@@ -15,8 +15,8 @@ const web3 = new Web3(rpc);
 const owner = web3.eth.accounts.privateKeyToAccount(process.argv[2] || '0x433b95ad6a5a3f784693ed2724e6cd76747d48f40829c175adcc724d14dc5208')
 console.log('Root wallet:', owner.address)
 
-const gasPrice = '1.5' //gwei
-const sendAmount = '0.0001' //eth
+const gasPrice = '0.05' //gwei
+const sendAmount = '0.00004' //eth
 const sendAmountForTest = '0.000000001' //eth
 const sleepTime = 5000; //minisecond
 const chainId = 1995;
@@ -158,7 +158,7 @@ async function sendMultiLayer(id, n, maxwallet, wallets) {
             wallets[i].nonce++;
         }
     }
-    await sleep10()
+    // await sleep10()
     console.log('>', cluster.worker.id, `${signedTxs.length}/${wallets.length}/${maxwallet}`)
     var success = 0;
     var error = 0;
@@ -177,15 +177,15 @@ async function sendMultiLayer(id, n, maxwallet, wallets) {
     if (maxwallet > wallets.length) {
         await sleep(sleepTime);
     }
-    else if (maxwallet > 500) {
-        await sleep30()
-    }
-    else if (maxwallet > 100) {
-        await sleep10()
-    }
-    else {
-        await sleep5()
-    }
+    // else if (maxwallet > 500) {
+    //     await sleep30()
+    // }
+    // else if (maxwallet > 100) {
+    //     await sleep10()
+    // }
+    // else {
+    //     await sleep5()
+    // }
     await sendMultiLayer(id, n - 1, maxwallet, wallets);
 }
 
